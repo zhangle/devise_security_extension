@@ -14,7 +14,7 @@ module DeviseSecurityExtension
         Devise::ConfirmationsController.send(:include, Patches::ControllerSecurityQuestion) if Devise.security_question_for_confirmation
 
         Devise::RegistrationsController.send(:include, Patches::ControllerCaptcha) if Devise.captcha_for_sign_up
-        Devise::SessionsController.send(:include, Patches::ControllerCaptcha) if Devise.captcha_for_sign_in && !request.format.json?
+        Devise::SessionsController.send(:include, Patches::ControllerCaptcha) if Devise.captcha_for_sign_in
       end
     end
   end
